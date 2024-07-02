@@ -1,0 +1,26 @@
+{
+  "name": "jarvisapi",
+  "version": "1.0.0",
+  "description": "backend for Jarvis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mshra/JarvisAPI.git"
+  },
+  "author": "tarzi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mshra/JarvisAPI/issues"
+  },
+  "homepage": "https://github.com/Mshra/JarvisAPI#readme",
+  "dependencies": {
+    "@google/generative-ai": "^0.14.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
