@@ -39,7 +39,7 @@ app.get('/gemini/:prompt', async (req, res) => {
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash", generationConfig, safetySettings });
 
   const result = await model.generateContent(prompt);
-  res.send(result.response.text())
+  res.json({ "AIresponse": result.response.text() })
 })
 
 app.listen(PORT, () => {
