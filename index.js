@@ -14,8 +14,9 @@ app.get('/', (req, res) => {
   res.send('JarvisAPI')
 })
 
-app.get('/gemini/:prompt', async (req, res) => {
-  const prompt = req.params.prompt
+app.get('/api', async (req, res) => {
+  const prompt = req.query.prompt
+
   const genAI = new GoogleGenerativeAI(API_KEY)
 
   const generationConfig = {
@@ -39,7 +40,7 @@ app.get('/gemini/:prompt', async (req, res) => {
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash", generationConfig, safetySettings });
 
   const result = await model.generateContent(prompt);
-  res.json({ "AIresponse": result.response.text() })
+  res.status(200).json({ "AIresponse": result.response.text() })
 })
 
 app.listen(PORT, () => {
